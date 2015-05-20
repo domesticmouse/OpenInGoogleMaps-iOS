@@ -38,6 +38,12 @@ When you open your maps now in Google Maps (or Google Chrome), you should see a 
 
 You only need to set the callback URL once during the lifetime of your application and it will be used in all future `OpenInGoogleMapsController` requests.
 
+###Defining the name of your app for callbacks, AKA `x-source`
+
+Google Maps and Google Chrome both display a path back to your app, if you supply the name as the `x-source`
+parameter to [x-callback-URL](http://x-callback-url.com/). The `OpenInGoogleMapsController` will
+retrieve this parameter from your `CFBundleDisplayName`, which can be conveniently set in your `info.plist` file.
+
 ##Fallback Strategies
 
 If the user does not have Google Maps installed, you can specify a number of fallback strategies for `OpenInGoogleMapsController` to try by setting the `fallbackStrategy` property.
